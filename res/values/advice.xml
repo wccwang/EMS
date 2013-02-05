@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="advice_light">You Should Eat More</string>
+    <string name="advice_average">You Are Perfectly Fit</string>
+    <string name="advice_heavy">You Should Put On A Diet</string>
+</resources>

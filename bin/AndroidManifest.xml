@@ -12,6 +12,8 @@
   	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />  
   	<uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     
     <uses-sdk
         android:minSdkVersion="9"
@@ -40,6 +42,7 @@
         <meta-data
     		android:name="com.google.android.maps.v2.API_KEY"
     		android:value="AIzaSyDUcyukOjGtnP9dV01Lz3mJ1_GGBTfV68A"/>
+        <activity android:name="Mode"></activity>
     </application>
 
 </manifest>

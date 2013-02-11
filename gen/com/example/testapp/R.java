@@ -130,32 +130,39 @@ containing a value of this type.
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
         public static final int pic_border=0x7f020001;
+        public static final int transparent=0x7f020002;
     }
     public static final class id {
-        public static final int choose_photo=0x7f040006;
-        public static final int imgView=0x7f040007;
-        public static final int map=0x7f040004;
-        public static final int menu_settings=0x7f040008;
+        public static final int LinearLayout01=0x7f04000d;
+        public static final int ListView01=0x7f04000e;
+        public static final int ScrollView01=0x7f040004;
+        public static final int accident=0x7f040005;
+        public static final int imgView=0x7f04000c;
+        public static final int map=0x7f040006;
+        public static final int name=0x7f040008;
         public static final int none=0x7f040000;
         public static final int normal=0x7f040001;
+        public static final int phone_number=0x7f040009;
         public static final int satellite=0x7f040002;
-        public static final int take_photo=0x7f040005;
+        public static final int submit=0x7f04000b;
         public static final int terrain=0x7f040003;
+        public static final int trans_image=0x7f040007;
+        public static final int upload_photo=0x7f04000a;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int mode=0x7f030001;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
     }
     public static final class string {
-        public static final int about_msg=0x7f050015;
-        public static final int about_title=0x7f050014;
+        public static final int about_msg=0x7f050018;
+        public static final int about_title=0x7f050017;
         public static final int advice_average=0x7f05000c;
         public static final int advice_heavy=0x7f05000d;
         public static final int advice_light=0x7f05000b;
         public static final int app_name=0x7f05000e;
-        public static final int choose_photo=0x7f050013;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=30] 
@@ -199,13 +206,18 @@ containing a value of this type.
         Google Play services (from Play Store) [CHAR LIMIT=40] 
          */
         public static final int common_google_play_services_update_title=0x7f050007;
-        public static final int hello_world=0x7f05000f;
-        public static final int homepage_label=0x7f050017;
-        public static final int homepage_uri=0x7f050018;
-        public static final int menu_settings=0x7f050010;
-        public static final int ok_label=0x7f050016;
-        public static final int picture=0x7f050012;
-        public static final int take_photo=0x7f050011;
+        public static final int fire=0x7f050012;
+        public static final int flood=0x7f050013;
+        public static final int homepage_label=0x7f05001a;
+        public static final int homepage_uri=0x7f05001b;
+        public static final int menu_settings=0x7f050011;
+        public static final int name=0x7f050010;
+        public static final int ok_label=0x7f050019;
+        public static final int phone_number=0x7f05000f;
+        public static final int picture=0x7f050015;
+        public static final int submit=0x7f05001c;
+        public static final int trans_pic=0x7f050016;
+        public static final int upload_photo=0x7f050014;
     }
     public static final class style {
         /** 

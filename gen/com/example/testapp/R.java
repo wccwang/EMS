@@ -128,9 +128,10 @@ containing a value of this type.
         public static final int zOrderOnTop=0x7f01000d;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int pic_border=0x7f020001;
-        public static final int transparent=0x7f020002;
+        public static final int back=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int pic_border=0x7f020002;
+        public static final int transparent=0x7f020003;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f04000d;
@@ -144,7 +145,9 @@ containing a value of this type.
         public static final int normal=0x7f040001;
         public static final int phone_number=0x7f040009;
         public static final int satellite=0x7f040002;
+        public static final int start_new=0x7f040010;
         public static final int submit=0x7f04000b;
+        public static final int submit_success=0x7f04000f;
         public static final int terrain=0x7f040003;
         public static final int trans_image=0x7f040007;
         public static final int upload_photo=0x7f04000a;
@@ -152,6 +155,7 @@ containing a value of this type.
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int mode=0x7f030001;
+        public static final int submit=0x7f030002;
     }
     public static final class menu {
         public static final int activity_main=0x7f070000;
@@ -208,14 +212,13 @@ containing a value of this type.
         public static final int common_google_play_services_update_title=0x7f050007;
         public static final int fire=0x7f050012;
         public static final int flood=0x7f050013;
-        public static final int homepage_label=0x7f05001a;
-        public static final int homepage_uri=0x7f05001b;
         public static final int menu_settings=0x7f050011;
         public static final int name=0x7f050010;
-        public static final int ok_label=0x7f050019;
         public static final int phone_number=0x7f05000f;
         public static final int picture=0x7f050015;
-        public static final int submit=0x7f05001c;
+        public static final int start_new=0x7f05001a;
+        public static final int submit=0x7f05001b;
+        public static final int success=0x7f050019;
         public static final int trans_pic=0x7f050016;
         public static final int upload_photo=0x7f050014;
     }

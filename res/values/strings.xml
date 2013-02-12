@@ -14,8 +14,7 @@
 	<string name="about_msg">Android App\n
                 			Author Bohr\n\n
                 			bohr109 [at] gmail.com</string>
-    <string name = "ok_label"> OK </string>
-    <string name = "homepage_label"> Homepage </string>
-    <string name = "homepage_uri"> http://www.google.com/ </string>
+    <string name = "success"> Submission Success! </string>
+    <string name = "start_new">New Submission</string>
     <string name = "submit"> Submit </string>
 </resources>

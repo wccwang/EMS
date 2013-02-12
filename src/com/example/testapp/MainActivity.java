@@ -57,6 +57,7 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
 	final int MODE_SELECTION = 0;
 	final int CAMERA_CAPTURE = 1;
 	final int RESULT_LOAD_IMAGE = 2;
+	final int SUBMIT_DATA = 3;
 	//captured picture uri
 	//private Uri picUri;
 	
@@ -315,8 +316,17 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
     	    	String device_type = device_name + " (" + os_version + ")";
     	    	helpRequest.put("deviceType", device_type);
     	    	
-    	    	helpRequest.saveInBackground();
-    	    	hashedData.saveInBackground();
+    	    	if(modeStr != "N/A"){
+    	    		helpRequest.saveInBackground();
+    	    		hashedData.saveInBackground();
+    	    		Intent submitIntent = new Intent();
+        	    	submitIntent.setClass(MainActivity.this, Submit.class);
+        	    	startActivityForResult(submitIntent, SUBMIT_DATA);
+    	    	}
+    	    	else{
+    	    		Toast toast = Toast.makeText(getApplicationContext(), "Please Indicate the Accident Type", Toast.LENGTH_SHORT);
+    	    		toast.show();
+    	    	}
     	    }
     	}
     };

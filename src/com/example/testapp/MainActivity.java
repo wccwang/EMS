@@ -1,6 +1,7 @@
 package com.example.testapp;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -8,11 +9,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
+import java.lang.Math;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.location.Criteria;
@@ -101,7 +102,8 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
 			//only if locatingMe is true
 			if (mMap!=null){
 			    CameraUpdate pino= CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude()));
-			    mMap.animateCamera(pino);
+			    mMap.moveCamera(pino);
+			    mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
 			}
         }
         
@@ -147,10 +149,10 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
         	mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         	mMap.setMyLocationEnabled(true);
         	mMap.setLocationSource(this);
-        	mMap.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(40.7142, -74.0064)));
+        	//mMap.animateCamera(CameraUpdateFactory.newLatLng(new LatLng(40.7142, -74.0064)));
         	mMap.getUiSettings().setZoomControlsEnabled(false);
         	mMap.getUiSettings().setMyLocationButtonEnabled(false);
-        	mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
+        	//mMap.animateCamera(CameraUpdateFactory.zoomTo(14.0f));
         }
     }
     
@@ -366,19 +368,23 @@ public class MainActivity extends FragmentActivity implements LocationListener, 
         		picView.setImageBitmap(thePic);
         	}
 	    	else if(requestCode == RESULT_LOAD_IMAGE){
-	        		Uri selectedImage = data.getData();
-	                String[] filePathColumn = { MediaStore.Images.Media.DATA };
-	     
-	                Cursor cursor = getContentResolver().query(selectedImage,
-	                        filePathColumn, null, null, null);
-	                cursor.moveToFirst();
-	     
-	                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-	                String picturePath = cursor.getString(columnIndex);
-	                cursor.close();
-	                
-	                thePic = (Bitmap)BitmapFactory.decodeFile(picturePath);
-	                picView.setImageBitmap(thePic);
+        		Uri selectedImage = data.getData();
+        		try {
+        			thePic = BitmapFactory.decodeStream(getContentResolver().openInputStream(selectedImage));
+        			int width = Math.min(thePic.getWidth(), 1024);
+        			int height = Math.min(thePic.getHeight(), 1024);
+        			thePic = Bitmap.createScaledBitmap(thePic, width, height, false);
+        			picView.setImageBitmap(thePic);
+    			 } catch (FileNotFoundException e) {
+    			 	// TODO Auto-generated catch block
+    			 	e.printStackTrace();
+    			 }
+	    	}
+	    	else if(requestCode == SUBMIT_DATA){
+	    		nameIn.setText("");
+	    		modeStr = "N/A";
+	        	accidentIn.setText("Click to Select Accident Type:");
+	        	picView.setImageResource(android.R.color.transparent);
 	    	}
         	if(requestCode == CAMERA_CAPTURE || requestCode == RESULT_LOAD_IMAGE){
 		    	//Put image to parse object

@@ -84,8 +84,8 @@
 
 		<ImageView
 		    android:id="@+id/imgView"
-		    android:layout_width="120dp"
-		    android:layout_height="200dp"
+		    android:layout_width="150dp"
+		    android:layout_height="250dp"
 		    android:contentDescription="@string/picture"
 		    android:layout_centerHorizontal = "true"
 		    android:layout_margin="10dp"
